@@ -62,7 +62,8 @@ public class Main {
                     getName(in,cBook);
                     break;
                 case EXISTS_PHONE:
-                    continue;
+                    equalPhone(cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -175,10 +176,9 @@ public class Main {
     }
 
     private static void equalPhone(ContactBook cBook) {
-        cBook.initializeIterator();
-
-        while( cBook.hasNext() ) {
-
-        }
+        if (cBook.hasEquals())
+            System.out.println(EQUAL_PHONE);
+        else
+            System.out.println(NO_EQUAL_PHONE);
     }
 }
