@@ -95,7 +95,7 @@ public class ContactBook {
         boolean hasEquals = false;
 
         for (int i = 0; i < counter && !hasEquals; i++) {
-            for (int j = i; j < counter && !hasEquals; j++) {
+            for (int j = i + 1; j < counter && !hasEquals; j++) {
                 if (contacts[i].getPhone() == contacts[j].getPhone()) {
                     hasEquals = true;
                 }
