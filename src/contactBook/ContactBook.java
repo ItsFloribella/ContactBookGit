@@ -94,15 +94,19 @@ public class ContactBook {
     public boolean hasEquals() {
         boolean hasEquals = false;
 
-        for (int i = 0; i < counter && !hasEquals; i++) {
-            for (int j = i + 1; j < counter && !hasEquals; j++) {
-                if (contacts[i].getPhone() == contacts[j].getPhone()) {
+        int i = 0;
+        int j = 1;
+
+        while (i < counter && !hasEquals) {
+            while (j < counter && !hasEquals) {
+                if (contacts[i].getPhone() == contacts[j].getPhone())
                     hasEquals = true;
-                }
+                j++;
             }
+            i++;
+            j = i + 1;
         }
 
         return hasEquals;
     }
-
 }
