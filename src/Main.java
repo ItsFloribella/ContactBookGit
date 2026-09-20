@@ -25,6 +25,8 @@ public class Main {
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String PHONE_NOT_FOUND = "Phone number does not exist.";
+    public static final String EQUAL_PHONE = "There are contacts that share phone numbers.";
+    public static final String NO_EQUAL_PHONE = "All contacts have different phone numbers.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -169,6 +171,14 @@ public class Main {
         }
         if (!found) {
             System.out.println(PHONE_NOT_FOUND);
+        }
+    }
+
+    private static void equalPhone(ContactBook cBook) {
+        cBook.initializeIterator();
+
+        while( cBook.hasNext() ) {
+
         }
     }
 }
