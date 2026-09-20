@@ -24,6 +24,7 @@ public class Main {
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
+    public static final String PHONE_NOT_FOUND = "Phone number does not exist.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -157,5 +158,17 @@ public class Main {
 
     private static void getName(Scanner in, ContactBook cBook) {
         int phone = in.nextInt(); in.nextLine();
+        cBook.initializeIterator();
+        boolean found = false;
+        while(cBook.hasNext() && !found) {
+            Contact c = cBook.next();
+            if (c.getPhone() == phone) {
+                System.out.println(c.getName());
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println(PHONE_NOT_FOUND);
+        }
     }
 }
